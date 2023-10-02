@@ -1,0 +1,29 @@
+.nav-container {
+    display: flex;
+    background-color: pink;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.nav {
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    & &__logo{
+        height: 50px;
+        width: 150px;
+        background-image: url('/assets/images/logo.svg');
+    }
+
+    & &__menu {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.options {
+    display: flex;
+    gap: 20px;
+}

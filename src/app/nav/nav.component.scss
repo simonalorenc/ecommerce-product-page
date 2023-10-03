@@ -1,25 +1,50 @@
 .nav-container {
     display: flex;
-    background-color: pink;
-    align-items: center;
     justify-content: space-between;
-    padding: 0px 20px;
+    align-items: center;
+    padding: 0px 300px;
+    width: 100%;
+
+    @media only screen and (max-width: 1220px) {
+        padding: 0px 100px;
+    }
 }
 
 .nav {
-    margin: 0;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--color-text);
+    position: relative;
+
 
     & &__logo{
-        height: 50px;
-        width: 150px;
-        background-image: url('/assets/images/logo.svg');
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-right: 50px;
     }
 
     & &__menu {
         display: flex;
-        gap: 10px;
+        align-items: center;
+        height: 100%;
+    }
+
+    & &__menu-category {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0px 12px;
+        color: var(--color-text);
+        transition: ease-in-out 0.25s;
+    }
+
+    & &__menu-category:hover {
+        cursor: pointer;
+        color: black;
+        border-bottom: solid 5px var(--color-text-accent);
     }
 }
 

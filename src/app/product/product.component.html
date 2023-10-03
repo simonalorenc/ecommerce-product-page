@@ -1,10 +1,17 @@
 <div class="container">
   <div class="product-container">
     <div class="images">
-      <div class="images__main">
-        <img class="big" src="/assets/images/image-product-1.jpg" alt="">
+      <div class="images__container">
+        <div class="images__main">
+          <img class="big" src="/assets/images/image-product-1.jpg" alt="">
+        </div>
+        <div class="images__small">
+          <img class="small" src="/assets/images/image-product-1.jpg" alt="">
+          <img class="small" src="/assets/images/image-product-2.jpg" alt="">
+          <img class="small" src="/assets/images/image-product-3.jpg" alt="">
+          <img class="small" src="/assets/images/image-product-4.jpg" alt="">
+        </div>
       </div>
-      <div class="images__small"></div>
     </div>
     <div class="product-content">
       <div class="product-content__company">sneaker company</div>
@@ -15,11 +22,13 @@
         weather can offer
       </div>
       <div class="product-price">
-        <div class="product-price__valid">$125.00</div>
-        <div class="product-price__discount">50%</div>
-        <div class="product-price__old">$250.00</div>
+        <div class="product-price__container">
+          <div class="product-price__valid">$125.00</div>
+          <div class="product-price__discount">50%</div>
+        </div>
+        <div class="product-price__regular">$250.00</div>
       </div>
-      <div class="cart"></div>
+      <app-add-to-cart [counter]="counter"></app-add-to-cart>
     </div>
   </div>
 </div>

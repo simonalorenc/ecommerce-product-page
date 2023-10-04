@@ -3,30 +3,28 @@
     <div class="images">
       <div class="images__container">
         <div class="images__main">
-          <img class="big" src="/assets/images/image-product-1.jpg" alt="">
+          <img class="big" [src]="sneakers.photos.mainPhoto" alt="">
         </div>
         <div class="images__small">
-          <img class="small" src="/assets/images/image-product-1.jpg" alt="">
-          <img class="small" src="/assets/images/image-product-2.jpg" alt="">
-          <img class="small" src="/assets/images/image-product-3.jpg" alt="">
-          <img class="small" src="/assets/images/image-product-4.jpg" alt="">
+          <img class="small" [src]="sneakers.photos.others[0]" alt="">
+          <img class="small" [src]="sneakers.photos.others[1]" alt="">
+          <img class="small" [src]="sneakers.photos.others[2]" alt="">
+          <img class="small" [src]="sneakers.photos.others[3]" alt="">
         </div>
       </div>
     </div>
     <div class="product-content">
       <div class="product-content__company">sneaker company</div>
-      <div class="product-content__title">Fall Limited Sneakers</div>
+      <div class="product-content__title">{{sneakers.title}}</div>
       <div class="product-content__description">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer
+        {{sneakers.description}}
       </div>
       <div class="product-price">
         <div class="product-price__container">
-          <div class="product-price__valid">$125.00</div>
-          <div class="product-price__discount">50%</div>
+          <div class="product-price__valid">{{sneakers.salePrice}}</div>
+          <div class="product-price__discount">{{sneakers.discount}}</div>
         </div>
-        <div class="product-price__regular">$250.00</div>
+        <div class="product-price__regular">{{sneakers.regularPrice}}</div>
       </div>
       <app-add-to-cart [counter]="counter"></app-add-to-cart>
     </div>

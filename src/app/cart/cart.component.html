@@ -18,9 +18,9 @@
               Fall Limited Edition Sneakers
             </div>
             <div class="cart-preview__item-text-numbers">
-              <div class="cart-preview__item-text-numbers-price"></div>
-              <div class="cart-preview__item-text-numbers-amount" *ngIf="itemsNumber">{{ itemsNumber }}</div>
-              <div class="cart-preview__item-text-numbers-sum"></div>
+              <div class="cart-preview__item-text-numbers-price" *ngIf="itemsNumber">{{sneakers.salePrice}}</div>
+              <div class="cart-preview__item-text-numbers-amount" *ngIf="itemsNumber"> * {{itemsNumber}}</div>
+              <div class="cart-preview__item-text-numbers-sum">{{sum}}</div>
             </div>
           </div>
           <div class="cart-preview__item-delete"></div>

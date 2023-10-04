@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsService {
-  private cartNumberSubject = new BehaviorSubject<number>(0)
+   cartNumberSubject = new BehaviorSubject<number>(0)
   private onAddToCartClickSubject = new BehaviorSubject<void>(undefined)
 
   constructor() { }

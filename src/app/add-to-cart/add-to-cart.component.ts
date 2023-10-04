@@ -23,6 +23,9 @@ export class AddToCartComponent implements OnInit {
 
   removeItem(): void {
     this.itemsNumber--
+    if(this.itemsNumber < 0) {
+      this.itemsNumber = 0
+    }
   }
 
   addToCart() {

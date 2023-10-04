@@ -8,30 +8,25 @@ import { Observable } from 'rxjs';
   styleUrls: ['./add-to-cart.component.scss']
 })
 export class AddToCartComponent implements OnInit {
-  itemsNumber!: number
+  itemsNumber: number = 0
   @Input() counter!: number
 
   constructor(private itemsService: ItemsService) {
-    this.itemsNumber = itemsService.itemsNumber
   }
 
   ngOnInit(): void {
-    this.itemsService.getItemsNumberObservable().subscribe(number => {
-      this.itemsNumber = number
-    })
   }
 
   addItem(): void {
-    this.itemsService.addItem()
+    this.itemsNumber++
   }
 
   removeItem(): void {
-    this.itemsService.removeItem()
+    this.itemsNumber--
   }
 
   addToCart() {
-    const dataToSend = this.itemsNumber
-    this.itemsService.setItemsNumber(dataToSend)
-    this.itemsService.setClicked()
+    this.itemsService.addToCart(this.itemsNumber)
+    this.itemsNumber = 0
   }
 }

@@ -7,6 +7,24 @@
     height: 40px;
 }
 
+.preview {
+    position: absolute;
+    top: -1px;
+    left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-text-accent);
+    border-radius: 50%;
+
+    & &__number {
+        color: white;
+        font-size: 13px;
+    }
+}
+
 .cart-preview {
     background-color: var(--color-background);
     box-shadow: 0px 20px 51px -9px rgb(190, 190, 190);

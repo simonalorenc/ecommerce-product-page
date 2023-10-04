@@ -5,44 +5,22 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsService {
-  itemsNumber: number = 0
-  private itemsNumberSubject = new BehaviorSubject<number>(0)
-  private clickSubject = new BehaviorSubject<boolean>(false)
+  private cartNumberSubject = new BehaviorSubject<number>(0)
+  private onAddToCartClickSubject = new BehaviorSubject<void>(undefined)
 
   constructor() { }
 
-  setClicked() {
-    this.clickSubject.next(true)
+  addToCart(number: number) {
+    const newItemsNumber = this.cartNumberSubject.value + number
+    this.cartNumberSubject.next(newItemsNumber)
+    this.onAddToCartClickSubject.next()
   }
 
   getClickedObservable() {
-    return this.clickSubject.asObservable()
+    return this.onAddToCartClickSubject.asObservable()
   }
 
-  addItem() {
-    this.itemsNumber ++
-    this.itemsNumberSubject.next(this.itemsNumber)
-  }
-
-  removeItem() {
-    this.itemsNumber --
-    if (this.itemsNumber < 0) {
-      this.itemsNumber = 0
-    }
-    this.itemsNumberSubject.next(this.itemsNumber)
-  }
-
-  setItemsNumber(items: number) {
-    this.itemsNumberSubject.next(items)
-  }
-
-  getItemsNumberObservable() {
-    return this.itemsNumberSubject.asObservable()
-  }
-
-  displayNumberOfItems() {
-    this.itemsNumberSubject.asObservable().subscribe(number => {
-      console.log(number)
-    })
+  getItemsNumber() {
+    return this.cartNumberSubject.value
   }
 }

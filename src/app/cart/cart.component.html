@@ -1,4 +1,7 @@
 <div class="cart-icon" (click)="toggleContent()">
+  <div *ngIf="itemsNumber" class="preview">
+    <div class="preview__number">{{itemsNumber}}</div>
+  </div>
   <img src="/assets/images/icon-cart.svg" alt="" />
   <div class="cart-preview" *ngIf="showContent">
     <div class="cart-preview__title">Cart</div>
@@ -17,7 +20,7 @@
             <div class="cart-preview__item-text-numbers">
               <div class="cart-preview__item-text-numbers-price"></div>
               <div class="cart-preview__item-text-numbers-amount" *ngIf="itemsNumber">{{ itemsNumber }}</div>
-              <div class="cart-preview__item-text-numbers-sum">9</div>
+              <div class="cart-preview__item-text-numbers-sum"></div>
             </div>
           </div>
           <div class="cart-preview__item-delete"></div>

@@ -9,16 +9,11 @@ import { ItemsService } from '../items.service';
 export class CartComponent implements OnInit {
   showContent: boolean = false;
   clicked: boolean = false;
-  itemsNumber!: number;
+  itemsNumber: number = 0;
 
   constructor(private itemsService: ItemsService) {
-    this.itemsService.getClickedObservable().subscribe(clicked => {
-      if (clicked) {
-        this.itemsService.getItemsNumberObservable().subscribe(number => {
-          this.itemsNumber = number
-        })
-        this.clicked = true
-      }
+    this.itemsService.getClickedObservable().subscribe(_ => {
+        this.itemsNumber = this.itemsService.getItemsNumber()
     })
   }
 

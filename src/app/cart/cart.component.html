@@ -1,4 +1,4 @@
-<div class="cart-icon" (click)="toggleContent()">
+<div class="cart-icon" (click)="openCart();toggleContent()">
   <div *ngIf="itemsNumber" class="preview">
     <div class="preview__number">{{itemsNumber}}</div>
   </div>
@@ -6,8 +6,8 @@
   <div class="cart-preview" *ngIf="showContent">
     <div class="cart-preview__title">Cart</div>
     <div class="cart-preview__items">
-      <div class="cart-preview__empty">Your cart is empty</div>
-      <div class="cart-preview__filled">
+      <div class="cart-preview__empty" *ngIf="!itemsNumber">Your cart is empty</div>
+      <div class="cart-preview__filled" *ngIf="itemsNumber">
         <div class="cart-preview__item">
           <img
             class="cart-preview__item-img"
@@ -23,7 +23,7 @@
               <div class="cart-preview__item-text-numbers-sum">{{sum}}</div>
             </div>
           </div>
-          <div class="cart-preview__item-delete"></div>
+          <div class="cart-preview__item-delete" (click)="removeItems()" ></div>
         </div>
         <div class="cart-preview__checkout">checkout</div>
       </div>

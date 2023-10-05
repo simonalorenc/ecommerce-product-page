@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsService {
-   cartNumberSubject = new BehaviorSubject<number>(0)
+  cartNumberSubject = new BehaviorSubject<number>(0)
   private onAddToCartClickSubject = new BehaviorSubject<void>(undefined)
 
   constructor() { }
@@ -22,5 +22,10 @@ export class ItemsService {
 
   getItemsNumber() {
     return this.cartNumberSubject.value
+  }
+
+  removeAllItems() {
+    this.cartNumberSubject.next(0)
+    console.log(this.cartNumberSubject.value)
   }
 }

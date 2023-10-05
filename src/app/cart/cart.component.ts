@@ -10,6 +10,7 @@ import { Product } from '../product';
 })
 export class CartComponent implements OnInit {
   showContent: boolean = false;
+  cartOpen: boolean = false;
   clicked: boolean = false;
   itemsNumber: number = 0;
   sneakers!: Product
@@ -25,11 +26,24 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
   toggleContent() {
-    this.showContent = !this.showContent;
-    
+    if(!this.cartOpen) {
+      this.showContent = !this.showContent;
+    } 
+  }
+
+  openCart() {
+    this.showContent = !this.showContent
+    console.log(this.showContent)
+    this.cartOpen = !this.cartOpen
+    console.log(this.cartOpen)
+  }
+
+  removeItems() {
+    this.itemsService.removeAllItems()
+    this.sum = 0
+    this.itemsNumber = 0
   }
 }

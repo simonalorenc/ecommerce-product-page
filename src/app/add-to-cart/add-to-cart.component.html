@@ -4,8 +4,8 @@
     <div class="cart-options__number">{{ itemsNumber }}</div>
     <img class="plus" src="/assets/images/icon-plus.svg" alt="" (click)="addItem()">
   </div>
-  <div class="cart__add">
+  <div class="cart__add" (click)="addToCart()">
     <img class="" src="/assets/images/icon-cart.svg" alt="">
-    <div class="cart__text" (click)="addToCart()" >Add to cart</div>
+    <div class="cart__text">Add to cart</div>
   </div>
 </div>
